@@ -1,0 +1,20 @@
+<h1 class="display-4">Búsqueda: {{ termino }} </h1>
+<hr>
+
+<div *ngIf="heroes.length == 0">
+    <p style="font-size: 30px;">
+        No se encontraron resultados con el parámetro: {{ termino }}.
+    </p>
+</div>
+
+<div class="card-columns">
+    <div class="card" *ngFor="let heroe of heroes; let i = index">
+        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+        </div>
+        <button class="btn btn-dark btn-block" type="button">Ver más...</button>
+    </div>
+</div>
